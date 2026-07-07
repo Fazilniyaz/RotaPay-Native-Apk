@@ -6,13 +6,13 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { COLORS, FONTS, RADIUS } from '../../constants/theme';
 
-type Tab = 'home' | 'shifts' | 'clock' | 'more';
+type Tab = 'home' | 'earnings' | 'shifts' | 'more';
 
 const TABS: { key: Tab; label: string; icon: string; activeIcon: string; route: string }[] = [
-    { key: 'home',   label: 'Home',   icon: 'home-outline',      activeIcon: 'home',      route: '/(app)/dashboard' },
-    { key: 'shifts', label: 'Shifts', icon: 'calendar-outline',  activeIcon: 'calendar',  route: '/(app)/shifts' },
-    { key: 'clock',  label: 'Clock',  icon: 'time-outline',      activeIcon: 'time',      route: '/(app)/clock' },
-    { key: 'more',   label: 'More',   icon: 'grid-outline',      activeIcon: 'grid',      route: '/(app)/more' },
+    { key: 'home',     label: 'Home',     icon: 'home-outline',     activeIcon: 'home',     route: '/(app)/dashboard' },
+    { key: 'earnings', label: 'Earnings', icon: 'wallet-outline',   activeIcon: 'wallet',   route: '/(app)/earnings' },
+    { key: 'shifts',   label: 'Shifts',   icon: 'calendar-outline', activeIcon: 'calendar', route: '/(app)/shifts' },
+    { key: 'more',     label: 'More',     icon: 'grid-outline',     activeIcon: 'grid',     route: '/(app)/more' },
 ];
 
 export default function BottomNav({ active }: { active: Tab }) {

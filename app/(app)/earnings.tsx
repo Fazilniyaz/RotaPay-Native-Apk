@@ -274,7 +274,7 @@ export default function EarningsScreen() {
                 )}
             </ScrollView>
 
-            <BottomNav active="more" />
+            <BottomNav active="earnings" />
         </SafeAreaView>
     );
 }

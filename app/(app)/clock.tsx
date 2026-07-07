@@ -274,7 +274,7 @@ export default function ClockScreen() {
                     </>
                 )}
             </ScrollView>
-            <BottomNav active="clock" />
+            <BottomNav active="more" />
         </SafeAreaView>
     );
 }
