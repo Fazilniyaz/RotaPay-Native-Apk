@@ -1,0 +1,77 @@
+{
+  "expo": {
+    "name": "RotoPay",
+    "slug": "rotopay-native",
+    "version": "1.0.0",
+    "scheme": "rotopay",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "bundleIdentifier": "com.jadvix.rotopay",
+      "buildNumber": "1",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Used for profile photo",
+        "NSPhotoLibraryUsageDescription": "Used for profile photo"
+      }
+    },
+    "android": {
+      "package": "com.jadvix.rotopay",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#007BD2"
+      },
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-secure-store",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#007BD2"
+        }
+      ],
+      "expo-sharing",
+      "@react-native-community/datetimepicker",
+      "expo-web-browser",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "RotoPay uses your location to auto-fill your workplace location when it sets up a default employee for you."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "extraProguardRules": "-keepattributes *Annotation*,Signature,Exceptions\n-keep,allowobfuscation @interface com.facebook.proguard.annotations.DoNotStrip\n-keep @com.facebook.proguard.annotations.DoNotStrip class *\n-dontwarn okio.**\n-dontwarn javax.annotation.**"
+          },
+          "ios": {
+            "deploymentTarget": "15.1"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "rotopay-native-app"
+      }
+    }
+  }
+}
