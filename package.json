@@ -28,7 +28,7 @@
     "expo-font": "~55.0.8",
     "expo-image-picker": "~55.0.21",
     "expo-linear-gradient": "~55.0.15",
-    "expo-linking": "~55.0.16",
+    "expo-linking": "~57.0.2",
     "expo-location": "~55.1.11",
     "expo-print": "~55.0.16",
     "expo-router": "~55.0.16",
