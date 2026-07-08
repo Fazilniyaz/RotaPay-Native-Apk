@@ -26,7 +26,7 @@ const QUICK_ACTIONS = [
     { icon: 'briefcase-outline', label: 'Employers', route: '/(app)/employers' },
 ];
 
-const DONUT_COLORS = ['#0077cc', '#6aff90', '#008557', '#005ea3', '#37D36B', '#a0c9ff'];
+const DONUT_COLORS = ['#63c1bb', '#9ed5d1', '#105f68', '#3a9295', '#3A9295', '#c8e6e2'];
 const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 const shiftEarnings = (s: Shift) => (s.salaries ?? []).reduce((sum, w) => sum + (w.salary ?? 0), 0);
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
     cardTitle: { fontSize: 15, fontFamily: FONTS.semiBold, color: COLORS.onSurface, marginBottom: 16 },
     emptyNote: { fontSize: 13, fontFamily: FONTS.regular, color: COLORS.outline, textAlign: 'center', paddingVertical: 24 },
 
-    chartFooter: { flexDirection: 'row', justifyContent: 'space-between', borderTopWidth: 1, borderTopColor: 'rgba(0,94,163,0.08)', marginTop: 16, paddingTop: 14 },
+    chartFooter: { flexDirection: 'row', justifyContent: 'space-between', borderTopWidth: 1, borderTopColor: 'rgba(58,146,149,0.08)', marginTop: 16, paddingTop: 14 },
     footerItem: { alignItems: 'flex-start' },
     footerLabel: { fontSize: 9, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.5, marginBottom: 3 },
     footerVal: { fontSize: 15, fontFamily: FONTS.bold, color: COLORS.onSurface },
@@ -313,9 +313,9 @@ const styles = StyleSheet.create({
     sectionLabel: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 1, marginBottom: 10 },
     seeAll: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.4 },
 
-    rowBorder: { borderBottomWidth: 1, borderBottomColor: 'rgba(0,94,163,0.06)' },
+    rowBorder: { borderBottomWidth: 1, borderBottomColor: 'rgba(58,146,149,0.06)' },
     shiftRow: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 14 },
-    shiftIcon: { width: 34, height: 34, borderRadius: 8, backgroundColor: 'rgba(0,94,163,0.07)', alignItems: 'center', justifyContent: 'center' },
+    shiftIcon: { width: 34, height: 34, borderRadius: 8, backgroundColor: 'rgba(58,146,149,0.07)', alignItems: 'center', justifyContent: 'center' },
     shiftEmployer: { fontSize: 14, fontFamily: FONTS.semiBold, color: COLORS.onSurface, marginBottom: 2 },
     shiftMeta: { fontSize: 12, fontFamily: FONTS.regular, color: COLORS.outline },
     shiftTime: { fontSize: 12, fontFamily: FONTS.semiBold, color: COLORS.onSurfaceVar },
@@ -325,6 +325,6 @@ const styles = StyleSheet.create({
     activityText: { fontSize: 13, fontFamily: FONTS.medium, color: COLORS.onSurface, marginBottom: 2 },
     activityTime: { fontSize: 11, fontFamily: FONTS.regular, color: COLORS.outline, letterSpacing: 0.3 },
 
-    seeAllBtn: { padding: 14, alignItems: 'center', borderTopWidth: 1, borderTopColor: 'rgba(0,94,163,0.06)' },
+    seeAllBtn: { padding: 14, alignItems: 'center', borderTopWidth: 1, borderTopColor: 'rgba(58,146,149,0.06)' },
     seeAllBtnText: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.8 },
 });

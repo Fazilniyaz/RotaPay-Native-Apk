@@ -31,7 +31,7 @@ import { money, currencySymbol, fmtTime } from '../../lib/format';
 
 const PRESET_TYPES = ['day', 'night', 'rotational'];
 // Light, matte-finished label palette.
-const SHIFT_COLORS = ['#7FA9E0', '#6FC8A8', '#E0B36A', '#A88FD8', '#E38FA0', '#6FC0CC'];
+const SHIFT_COLORS = ['#63C1BB', '#C8E6E2', '#9ED5D1', '#3A9295', '#105F68', '#9ED5D1'];
 
 type Filter = 'all' | 'wages';
 const FILTERS: { value: Filter; label: string }[] = [
@@ -335,7 +335,7 @@ export default function ShiftsScreen() {
                                 </View>
 
                                 <View style={styles.statsStrip}>
-                                    <View style={[styles.statCell, { borderRightWidth: 1, borderRightColor: 'rgba(0,94,163,0.08)' }]}>
+                                    <View style={[styles.statCell, { borderRightWidth: 1, borderRightColor: 'rgba(58,146,149,0.08)' }]}>
                                         <Text style={styles.statCellLabel}>HOURS</Text>
                                         <Text style={styles.statCellVal}>{shift.totalHours}h</Text>
                                     </View>
@@ -525,12 +525,12 @@ const styles = StyleSheet.create({
     shiftIcon: { width: 42, height: 42, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
     shiftTitle: { fontSize: 15, fontFamily: FONTS.bold, color: COLORS.onSurface, marginBottom: 2 },
     shiftTime: { fontSize: 12, fontFamily: FONTS.regular, color: COLORS.outline },
-    statsStrip: { flexDirection: 'row', backgroundColor: 'rgba(0,94,163,0.04)', borderRadius: RADIUS.md, borderWidth: 1, borderColor: 'rgba(0,94,163,0.06)', padding: 10, marginBottom: 12 },
+    statsStrip: { flexDirection: 'row', backgroundColor: 'rgba(58,146,149,0.04)', borderRadius: RADIUS.md, borderWidth: 1, borderColor: 'rgba(58,146,149,0.06)', padding: 10, marginBottom: 12 },
     statCell: { flex: 1, alignItems: 'center' },
     statCellLabel: { fontSize: 9, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.4, marginBottom: 2 },
     statCellVal: { fontSize: 15, fontFamily: FONTS.semiBold, color: COLORS.onSurface },
     shiftActions: { flexDirection: 'row', gap: 10 },
-    editBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 10, borderRadius: RADIUS.sm, borderWidth: 1, borderColor: 'rgba(0,94,163,0.15)' },
+    editBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 10, borderRadius: RADIUS.sm, borderWidth: 1, borderColor: 'rgba(58,146,149,0.15)' },
     editText: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.5 },
     delBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 10, borderRadius: RADIUS.sm, borderWidth: 1, borderColor: 'rgba(186,26,26,0.2)' },
     delText: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.error, letterSpacing: 0.5 },
@@ -540,11 +540,11 @@ const styles = StyleSheet.create({
     wageIcon: { width: 40, height: 40, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
     wageShift: { fontSize: 14, fontFamily: FONTS.bold, color: COLORS.onSurface, marginBottom: 2 },
     wageEmp: { fontSize: 12, fontFamily: FONTS.regular, color: COLORS.outline },
-    wageBottom: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderTopWidth: 1, borderTopColor: 'rgba(0,94,163,0.06)', paddingTop: 12 },
+    wageBottom: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderTopWidth: 1, borderTopColor: 'rgba(58,146,149,0.06)', paddingTop: 12 },
     wageToday: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.4 },
     wageRate: { fontSize: 18, fontFamily: FONTS.bold, color: COLORS.primary },
 
-    addWagesBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingVertical: 13, borderRadius: RADIUS.md, borderWidth: 1, borderColor: 'rgba(0,94,163,0.2)', marginTop: 2 },
+    addWagesBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingVertical: 13, borderRadius: RADIUS.md, borderWidth: 1, borderColor: 'rgba(58,146,149,0.2)', marginTop: 2 },
     addWagesText: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.6 },
 
     fieldLabel: { fontSize: 10, fontFamily: FONTS.bold, letterSpacing: 0.6, color: COLORS.onSurfaceVar, marginBottom: 6 },
@@ -565,7 +565,7 @@ const styles = StyleSheet.create({
     rateSymbol: { fontSize: 14, fontFamily: FONTS.medium, color: COLORS.outline, marginRight: 6 },
     rateInput: { flex: 1, fontSize: 14, fontFamily: FONTS.semiBold, color: COLORS.onSurface },
     rateHint: { fontSize: 11, fontFamily: FONTS.regular, color: COLORS.outline, marginTop: 6 },
-    previewCard: { flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(0,94,163,0.05)', borderWidth: 1, borderColor: 'rgba(0,94,163,0.08)', borderRadius: RADIUS.md, padding: 14, marginTop: 16 },
+    previewCard: { flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(58,146,149,0.05)', borderWidth: 1, borderColor: 'rgba(58,146,149,0.08)', borderRadius: RADIUS.md, padding: 14, marginTop: 16 },
     previewCardLabel: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.6 },
     previewCardSub: { fontSize: 11, fontFamily: FONTS.regular, color: COLORS.outline, marginTop: 2 },
     previewCardVal: { fontSize: 20, fontFamily: FONTS.bold, color: COLORS.primary },

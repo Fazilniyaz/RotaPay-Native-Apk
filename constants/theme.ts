@@ -1,9 +1,10 @@
-// Exact color tokens from RotoPay-Admin-WebApp CSS variables
+// Teal brand palette (manager-supplied), aligned with RotoPay-Admin-WebApp tokens.
+// L1 #C8E6E2 · L2 #9ED5D1 · L3 #63C1BB · L4 #3A9295 · L5 #105F68
 export const COLORS = {
-    primary:          '#005ea3',
-    primaryMid:       '#007BD2',
-    secondary:        '#006d30',
-    tertiary:         '#006a44',
+    primary:          '#3A9295',   // L4 — main brand
+    primaryMid:       '#63C1BB',   // L3 — brighter accent
+    secondary:        '#105F68',   // L5 — deep teal
+    tertiary:         '#105F68',   // L5
     error:            '#ba1a1a',
     surface:          '#fbf9f8',
     surfaceContainer: '#efeded',
@@ -14,8 +15,8 @@ export const COLORS = {
     onSurfaceVar:     '#404752',
     outline:          '#707783',
     outlineVar:       '#c0c7d4',
-    gradStart:        '#007BD2',
-    gradEnd:          '#37D36B',
+    gradStart:        '#3A9295',   // L4 → L5 rich teal gradient
+    gradEnd:          '#105F68',
 };
 
 export const FONTS = {

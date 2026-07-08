@@ -315,7 +315,7 @@ const styles = StyleSheet.create({
     avatar: { width: 64, height: 64, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
     avatarText: { fontSize: 22, fontFamily: FONTS.bold, color: '#fff' },
     photoBtns: { flexDirection: 'row', gap: 8 },
-    photoBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, borderWidth: 1, borderColor: 'rgba(0,94,163,0.2)', borderRadius: RADIUS.sm, paddingHorizontal: 10, paddingVertical: 8 },
+    photoBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, borderWidth: 1, borderColor: 'rgba(58,146,149,0.2)', borderRadius: RADIUS.sm, paddingHorizontal: 10, paddingVertical: 8 },
     photoBtnText: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.5 },
     photoBtnDanger: { flexDirection: 'row', alignItems: 'center', gap: 5, borderWidth: 1, borderColor: 'rgba(186,26,26,0.2)', borderRadius: RADIUS.sm, paddingHorizontal: 10, paddingVertical: 8 },
     photoBtnDangerText: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.error, letterSpacing: 0.5 },
@@ -327,7 +327,7 @@ const styles = StyleSheet.create({
     disabledText: { fontSize: 14, fontFamily: FONTS.regular, color: COLORS.onSurface },
     hint: { fontSize: 11, fontFamily: FONTS.regular, color: COLORS.outline, marginTop: 6 },
 
-    previewBox: { backgroundColor: 'rgba(0,94,163,0.04)', borderWidth: 1, borderColor: 'rgba(0,94,163,0.06)', borderRadius: RADIUS.md, padding: 14, marginTop: 16 },
+    previewBox: { backgroundColor: 'rgba(58,146,149,0.04)', borderWidth: 1, borderColor: 'rgba(58,146,149,0.06)', borderRadius: RADIUS.md, padding: 14, marginTop: 16 },
     previewLabel: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.8, marginBottom: 8 },
     previewValue: { fontSize: 13, fontFamily: FONTS.semiBold, color: COLORS.onSurface, lineHeight: 20 },
     previewMuted: { fontSize: 13, fontFamily: FONTS.regular, color: COLORS.outline },

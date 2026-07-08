@@ -111,9 +111,9 @@ const styles = StyleSheet.create({
         borderWidth: 1, borderColor: COLORS.outlineVar, borderRadius: RADIUS.md,
         padding: 11, marginBottom: 10,
     },
-    rowActive: { borderColor: COLORS.primary, backgroundColor: 'rgba(0,94,163,0.04)' },
+    rowActive: { borderColor: COLORS.primary, backgroundColor: 'rgba(58,146,149,0.04)' },
     rowInitial: {
-        width: 36, height: 36, borderRadius: 9, backgroundColor: 'rgba(0,94,163,0.1)',
+        width: 36, height: 36, borderRadius: 9, backgroundColor: 'rgba(58,146,149,0.1)',
         alignItems: 'center', justifyContent: 'center',
     },
     rowInitialText: { fontSize: 13, fontFamily: FONTS.bold, color: COLORS.primary },

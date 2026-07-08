@@ -330,7 +330,7 @@ const styles = StyleSheet.create({
     barLabel: { fontSize: 9, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.4, marginTop: 6 },
 
     dataRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 10 },
-    dataRowBorder: { borderBottomWidth: 1, borderBottomColor: 'rgba(0,94,163,0.06)' },
+    dataRowBorder: { borderBottomWidth: 1, borderBottomColor: 'rgba(58,146,149,0.06)' },
     dataLabel: { flex: 1, fontSize: 13, fontFamily: FONTS.medium, color: COLORS.onSurface },
     dataHours: { width: 60, textAlign: 'center', fontSize: 13, fontFamily: FONTS.regular, color: COLORS.outline },
     dataEarn: { width: 90, textAlign: 'right', fontSize: 13, fontFamily: FONTS.bold },
@@ -342,6 +342,6 @@ const styles = StyleSheet.create({
     insightText: { fontSize: 13, fontFamily: FONTS.regular, color: COLORS.onSurfaceVar, lineHeight: 19 },
 
     exportHint: { fontSize: 12, fontFamily: FONTS.regular, color: COLORS.outline, marginBottom: 12 },
-    exportOption: { flexDirection: 'row', alignItems: 'center', gap: 14, paddingVertical: 15, borderBottomWidth: 1, borderBottomColor: 'rgba(0,94,163,0.06)' },
+    exportOption: { flexDirection: 'row', alignItems: 'center', gap: 14, paddingVertical: 15, borderBottomWidth: 1, borderBottomColor: 'rgba(58,146,149,0.06)' },
     exportOptionText: { fontSize: 15, fontFamily: FONTS.medium, color: COLORS.onSurface },
 });

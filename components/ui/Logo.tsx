@@ -7,37 +7,37 @@ import { SvgCss } from 'react-native-svg/css';
 const LOGO_XML = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 372.96 372.96">
   <defs>
     <style>
-      .cls-1 { fill: #00c281; }
+      .cls-1 { fill: #63c1bb; }
       .cls-2 { fill: url(#linear-gradient-2); }
       .cls-3 { fill: url(#linear-gradient-4); }
       .cls-4 { fill: url(#linear-gradient-3); }
       .cls-5 { fill: url(#linear-gradient-5); }
       .cls-6 { fill: url(#linear-gradient-6); }
       .cls-7 { fill: url(#linear-gradient); }
-      .cls-8 { fill: #006fc9; }
+      .cls-8 { fill: #3a9295; }
     </style>
     <linearGradient id="linear-gradient" x1="29.72" y1="168.41" x2="343.58" y2="168.41" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#2bb8d1"/>
-      <stop offset="1" stop-color="#007bd2"/>
+      <stop offset="0" stop-color="#63c1bb"/>
+      <stop offset="1" stop-color="#63c1bb"/>
     </linearGradient>
     <linearGradient id="linear-gradient-2" x1="362.37" y1="119.94" x2="129.83" y2="290.36" gradientUnits="userSpaceOnUse">
-      <stop offset=".04" stop-color="#00ada1"/>
-      <stop offset=".99" stop-color="#007bd2"/>
+      <stop offset=".04" stop-color="#3a9295"/>
+      <stop offset=".99" stop-color="#63c1bb"/>
     </linearGradient>
     <linearGradient id="linear-gradient-3" x1="66.94" y1="302.32" x2="281.58" y2="73.33" gradientUnits="userSpaceOnUse">
-      <stop offset=".05" stop-color="#007bd2"/>
-      <stop offset=".32" stop-color="#00bb74"/>
-      <stop offset=".89" stop-color="#37d36b"/>
+      <stop offset=".05" stop-color="#63c1bb"/>
+      <stop offset=".32" stop-color="#63c1bb"/>
+      <stop offset=".89" stop-color="#3a9295"/>
     </linearGradient>
     <linearGradient id="linear-gradient-4" x1="203.8" y1="44.99" x2="57.14" y2="195.51" xlink:href="#linear-gradient"/>
     <linearGradient id="linear-gradient-5" x1="79.03" y1="163.25" x2="216.57" y2="84.11" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0886d2"/>
-      <stop offset=".36" stop-color="#00bf83"/>
-      <stop offset="1" stop-color="#00c16b"/>
+      <stop offset="0" stop-color="#63c1bb"/>
+      <stop offset=".36" stop-color="#63c1bb"/>
+      <stop offset="1" stop-color="#63c1bb"/>
     </linearGradient>
     <linearGradient id="linear-gradient-6" x1="95.89" y1="297.8" x2="288.68" y2="216.28" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#00be96"/>
-      <stop offset="1" stop-color="#00c16b"/>
+      <stop offset="0" stop-color="#63c1bb"/>
+      <stop offset="1" stop-color="#63c1bb"/>
     </linearGradient>
   </defs>
   <path class="cls-7" d="M258.84,83.83l-7.37,2.78h0l-7.76,2.92-2.87,1.07-.12.05,26.58,23.09h.01s-10,11.2-10,11.2l-57.83,64.68-.05.05-10.15-9.62c-10.84-11.02-16.79-16.62-32.54-18.02-11.59-1.06-23.99,9.71-29.4,15.08-.1.11-.2.21-.3.3l-.29.29c-.46.47-.86.89-1.18,1.23-.49.51-.8.86-.92,1t-.02.02c-.05.07-.08.1-.08.1l-44.53,49.21-.4.43h0s-.01.03-.01.03h0s-3.13,3.46-3.13,3.46l-17.73,19.59-29.02,32.08h26.9l77.31-87.27c6.56-7.3,12.76-14.96,23.71-13.86,10.58,1.09,18.23,11.67,18.23,11.67,12.78,12.04,15.33,14.96,24.81,15.69,12.04,1.09,25.9-19.34,25.9-19.34,7.49-5.71,41.09-45.86,70.38-81.54v-.06h-3.07v-5.63h3.07v-11.09c0-3.82,1.09-6.77,3.26-8.87,2.18-2.09,5.24-3.14,9.18-3.14,3.65,0,6.53.99,8.66,2.95.03-.03.06-.06.08-.09,13.92-17.11,23.53-29.86,24.81-31.46l.28-.35.35-.49-84.74,31.86Z"/>
