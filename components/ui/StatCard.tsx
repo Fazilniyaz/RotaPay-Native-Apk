@@ -13,6 +13,7 @@ export default function StatCard({
     change,
     trend = 'neutral',
     sub,
+    gradient,
 }: {
     title: string;
     value: string;
@@ -20,10 +21,12 @@ export default function StatCard({
     change?: number | null;
     trend?: 'up' | 'down' | 'neutral';
     sub?: string;
+    gradient?: [string, string];
 }) {
     const up = trend === 'up';
     const down = trend === 'down';
-    const trendColor = up ? '#001b48' : down ? '#ba1a1a' : COLORS.primary;
+    const trendColor = up ? '#1d4ed8' : down ? '#ba1a1a' : COLORS.primary;
+    const iconColors = gradient ?? [COLORS.gradStart, COLORS.gradEnd];
 
     return (
         <View style={styles.card}>
@@ -35,7 +38,7 @@ export default function StatCard({
                     </Text>
                 </View>
                 <LinearGradient
-                    colors={[COLORS.gradStart, COLORS.gradEnd]}
+                    colors={iconColors}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}
                     style={styles.iconBubble}
@@ -60,7 +63,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.surfaceLowest,
         borderRadius: RADIUS.lg,
         borderWidth: 1,
-        borderColor: 'rgba(2,69,122,0.08)',
+        borderColor: 'rgba(37,99,235,0.08)',
         padding: 16,
         ...SHADOW.card,
     },

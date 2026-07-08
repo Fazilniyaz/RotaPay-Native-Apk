@@ -7,6 +7,7 @@ import { loadStoredAuth } from '../../store/slices/authSlice';
 import { loadAllData } from '../../store/slices/dataSlice';
 import { useNotificationsSync } from '../../hooks/useNotificationsSync';
 import { OnboardingGate } from '../../components/onboarding/OnboardingGate';
+import { ProductTour } from '../../components/onboarding/ProductTour';
 import { DeviceIntegrityGate } from '../../components/security/DeviceIntegrityGate';
 import { loadRuntimeConfig } from '../../lib/runtimeConfig';
 import { checkDeviceIntegrity } from '../../lib/deviceIntegrity';
@@ -53,6 +54,8 @@ export default function AppLayout() {
             <DeviceIntegrityGate />
             {/* Blocks the app until the first (default) employee is created. */}
             <OnboardingGate />
+            {/* First-run, skippable walkthrough (employee → shift → wages → calendar → clock). */}
+            <ProductTour />
         </>
     );
 }

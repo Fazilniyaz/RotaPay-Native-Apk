@@ -22,7 +22,7 @@ import { fmtTime } from '../../lib/format';
 const WEEKDAYS = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 // Light, matte-finished label palette.
-const PALETTE = ['#018ABE', '#D6E8EE', '#97CADB', '#02457A', '#001B48', '#97CADB'];
+const PALETTE = ['#06B6D4', '#DBEAFE', '#7DD3FC', '#2563EB', '#1D4ED8', '#7DD3FC'];
 
 const startOfDay = (d: Date) => new Date(d.getFullYear(), d.getMonth(), d.getDate());
 const isSameDay = (a: Date, b: Date) => a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
@@ -260,10 +260,10 @@ export default function CalendarScreen() {
                             <Text style={styles.muted}>Nothing on this day yet.</Text>
                         ) : (
                             dayEntries(dayPopup).map((e) => (
-                                <View key={e.id} style={[styles.entryRow, { backgroundColor: tint(e.color || '#02457a') }]}>
-                                    <Ionicons name={typeIcon[e.type] as any} size={16} color={e.color || '#02457a'} />
-                                    <Text style={[styles.entryRowTitle, { color: e.color || '#02457a' }]} numberOfLines={1}>{e.title}</Text>
-                                    <Text style={[styles.entryRowType, { color: e.color || '#02457a' }]}>{e.type}</Text>
+                                <View key={e.id} style={[styles.entryRow, { backgroundColor: tint(e.color || '#2563eb') }]}>
+                                    <Ionicons name={typeIcon[e.type] as any} size={16} color={e.color || '#2563eb'} />
+                                    <Text style={[styles.entryRowTitle, { color: e.color || '#2563eb' }]} numberOfLines={1}>{e.title}</Text>
+                                    <Text style={[styles.entryRowType, { color: e.color || '#2563eb' }]}>{e.type}</Text>
                                     <TouchableOpacity onPress={() => setDelTarget(e)} hitSlop={8}>
                                         <Ionicons name="trash-outline" size={16} color={COLORS.error} />
                                     </TouchableOpacity>
@@ -390,32 +390,32 @@ const styles = StyleSheet.create({
     content: { padding: 16, paddingBottom: 24, gap: 14 },
 
     chips: { flexDirection: 'row', gap: 10 },
-    chip: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, borderWidth: 1, borderColor: 'rgba(2,69,122,0.2)', borderRadius: RADIUS.md, paddingVertical: 11 },
+    chip: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, borderWidth: 1, borderColor: 'rgba(37,99,235,0.2)', borderRadius: RADIUS.md, paddingVertical: 11 },
     chipText: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.5 },
 
     monthBar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
     navBtn: { width: 36, height: 36, borderRadius: 8, alignItems: 'center', justifyContent: 'center' },
     monthMid: { flexDirection: 'row', alignItems: 'center', gap: 10 },
     monthLabel: { fontSize: 16, fontFamily: FONTS.bold, color: COLORS.onSurface },
-    paidBadge: { flexDirection: 'row', alignItems: 'center', gap: 3, backgroundColor: 'rgba(0,27,72,0.1)', borderRadius: 999, paddingHorizontal: 8, paddingVertical: 3 },
+    paidBadge: { flexDirection: 'row', alignItems: 'center', gap: 3, backgroundColor: 'rgba(29,78,216,0.1)', borderRadius: 999, paddingHorizontal: 8, paddingVertical: 3 },
     paidText: { fontSize: 9, fontFamily: FONTS.bold, color: COLORS.secondary, letterSpacing: 0.4 },
-    todayBtn: { borderWidth: 1, borderColor: 'rgba(2,69,122,0.2)', borderRadius: 6, paddingHorizontal: 8, paddingVertical: 3 },
+    todayBtn: { borderWidth: 1, borderColor: 'rgba(37,99,235,0.2)', borderRadius: 6, paddingHorizontal: 8, paddingVertical: 3 },
     todayText: { fontSize: 9, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.6 },
 
     weekRow: { flexDirection: 'row', marginBottom: 4 },
     weekday: { flex: 1, textAlign: 'center', fontSize: 10, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.5, paddingVertical: 6 },
     grid: { flexDirection: 'row', flexWrap: 'wrap' },
-    cell: { width: `${100 / 7}%`, minHeight: 62, padding: 3, borderWidth: 0.5, borderColor: 'rgba(2,69,122,0.06)' },
+    cell: { width: `${100 / 7}%`, minHeight: 62, padding: 3, borderWidth: 0.5, borderColor: 'rgba(37,99,235,0.06)' },
     cellOut: { backgroundColor: 'rgba(0,0,0,0.015)' },
-    cellToday: { backgroundColor: 'rgba(2,69,122,0.10)', borderWidth: 1.5, borderColor: COLORS.primary },
-    cellOpen: { backgroundColor: 'rgba(0,27,72,0.10)', borderWidth: 1.5, borderColor: COLORS.secondary },
+    cellToday: { backgroundColor: 'rgba(37,99,235,0.10)', borderWidth: 1.5, borderColor: COLORS.primary },
+    cellOpen: { backgroundColor: 'rgba(29,78,216,0.10)', borderWidth: 1.5, borderColor: COLORS.secondary },
     dayNumTodayHi: { color: COLORS.primary },
     cellTop: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
     dayNum: { fontSize: 12, fontFamily: FONTS.bold, color: COLORS.onSurface, width: 22, height: 22, textAlign: 'center', textAlignVertical: 'center' },
     dayNumOut: { color: COLORS.outlineVar },
     dayNumToday: { width: 22, height: 22, borderRadius: 11, alignItems: 'center', justifyContent: 'center' },
     dayNumTodayText: { fontSize: 11, fontFamily: FONTS.bold, color: '#fff' },
-    shiftDot: { backgroundColor: 'rgba(2,69,122,0.08)', borderRadius: 4, paddingHorizontal: 4, paddingVertical: 1 },
+    shiftDot: { backgroundColor: 'rgba(37,99,235,0.08)', borderRadius: 4, paddingHorizontal: 4, paddingVertical: 1 },
     shiftDotText: { fontSize: 8, fontFamily: FONTS.bold, color: COLORS.primary },
     entryChip: { borderRadius: 3, paddingHorizontal: 3, paddingVertical: 1 },
     entryChipText: { fontSize: 8, fontFamily: FONTS.semiBold },
@@ -429,15 +429,15 @@ const styles = StyleSheet.create({
 
     shiftHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 8 },
     addShiftLink: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.5 },
-    shiftRow: { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderColor: 'rgba(2,69,122,0.08)', borderRadius: RADIUS.sm, padding: 10, marginBottom: 8 },
+    shiftRow: { flexDirection: 'row', alignItems: 'center', gap: 10, borderWidth: 1, borderColor: 'rgba(37,99,235,0.08)', borderRadius: RADIUS.sm, padding: 10, marginBottom: 8 },
     shiftColorDot: { width: 12, height: 12, borderRadius: 6 },
     shiftRowName: { fontSize: 13, fontFamily: FONTS.semiBold, color: COLORS.onSurface },
     shiftRowTime: { fontSize: 11, fontFamily: FONTS.regular, color: COLORS.outline },
-    showBtn: { borderWidth: 1, borderColor: 'rgba(2,69,122,0.2)', borderRadius: 6, paddingHorizontal: 10, paddingVertical: 6 },
+    showBtn: { borderWidth: 1, borderColor: 'rgba(37,99,235,0.2)', borderRadius: 6, paddingHorizontal: 10, paddingVertical: 6 },
     showBtnText: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.5 },
 
-    addNoteSection: { borderTopWidth: 1, borderTopColor: 'rgba(2,69,122,0.08)', marginTop: 14, paddingTop: 14 },
-    addKindBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, borderWidth: 1, borderColor: 'rgba(2,69,122,0.2)', borderRadius: RADIUS.sm, paddingVertical: 12 },
+    addNoteSection: { borderTopWidth: 1, borderTopColor: 'rgba(37,99,235,0.08)', marginTop: 14, paddingTop: 14 },
+    addKindBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, borderWidth: 1, borderColor: 'rgba(37,99,235,0.2)', borderRadius: RADIUS.sm, paddingVertical: 12 },
     addKindText: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.5 },
     fieldLabel: { fontSize: 10, fontFamily: FONTS.bold, letterSpacing: 0.6, color: COLORS.onSurfaceVar, marginBottom: 6 },
     input: { backgroundColor: COLORS.surfaceContainer, borderWidth: 1.5, borderColor: COLORS.outlineVar, borderRadius: RADIUS.md, paddingHorizontal: 12, paddingVertical: 13, fontSize: 14, fontFamily: FONTS.regular, color: COLORS.onSurface },
@@ -446,15 +446,15 @@ const styles = StyleSheet.create({
     paletteActive: { borderColor: COLORS.onSurfaceVar },
 
     empOption: { flexDirection: 'row', alignItems: 'center', gap: 12, borderWidth: 1, borderColor: COLORS.outlineVar, borderRadius: RADIUS.md, padding: 12, marginBottom: 10 },
-    empOptionActive: { borderColor: COLORS.primary, backgroundColor: 'rgba(2,69,122,0.04)' },
+    empOptionActive: { borderColor: COLORS.primary, backgroundColor: 'rgba(37,99,235,0.04)' },
     empOptionIcon: { width: 36, height: 36, borderRadius: 8, alignItems: 'center', justifyContent: 'center' },
     empOptionName: { fontSize: 14, fontFamily: FONTS.semiBold, color: COLORS.onSurface },
-    empInitial: { width: 36, height: 36, borderRadius: 8, backgroundColor: 'rgba(2,69,122,0.1)', alignItems: 'center', justifyContent: 'center' },
+    empInitial: { width: 36, height: 36, borderRadius: 8, backgroundColor: 'rgba(37,99,235,0.1)', alignItems: 'center', justifyContent: 'center' },
     empInitialText: { fontSize: 14, fontFamily: FONTS.bold, color: COLORS.primary },
-    empDefaultBadge: { backgroundColor: 'rgba(0,27,72,0.1)', borderRadius: 8, paddingHorizontal: 6, paddingVertical: 2 },
-    empDefaultText: { fontSize: 8, fontFamily: FONTS.bold, color: '#001b48', letterSpacing: 0.5 },
+    empDefaultBadge: { backgroundColor: 'rgba(29,78,216,0.1)', borderRadius: 8, paddingHorizontal: 6, paddingVertical: 2 },
+    empDefaultText: { fontSize: 8, fontFamily: FONTS.bold, color: '#1d4ed8', letterSpacing: 0.5 },
 
-    paidRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 1, borderColor: 'rgba(0,27,72,0.2)', backgroundColor: 'rgba(0,27,72,0.04)', borderRadius: RADIUS.sm, padding: 10, marginBottom: 8 },
+    paidRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderWidth: 1, borderColor: 'rgba(29,78,216,0.2)', backgroundColor: 'rgba(29,78,216,0.04)', borderRadius: RADIUS.sm, padding: 10, marginBottom: 8 },
     paidRowText: { fontSize: 13, fontFamily: FONTS.medium, color: COLORS.onSurface },
     unmarkText: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.error, letterSpacing: 0.5 },
 });

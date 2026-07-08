@@ -21,6 +21,7 @@ import Button from '../../components/ui/Button';
 import SelectField from '../../components/ui/SelectField';
 import { ConfirmDialog } from '../../components/ui/Modal';
 import { deleteAccount } from '../../lib/services/settings';
+import { restartProductTour } from '../../components/onboarding/ProductTour';
 import { CURRENCIES, currencySymbol, DateFormat, TimeFormat } from '../../lib/format';
 
 const DATE_FORMATS: DateFormat[] = ['DD/MM/YYYY', 'MM/DD/YYYY', 'YYYY-MM-DD'];
@@ -268,6 +269,21 @@ export default function SettingsScreen() {
                     <Text style={styles.logoutText}>LOG OUT</Text>
                 </TouchableOpacity>
 
+                {/* Help — replay the first-run product tour */}
+                <Card>
+                    <View style={styles.cardHead}>
+                        <LinearGradient colors={[COLORS.gradStart, COLORS.gradEnd]} style={styles.cardHeadIcon}>
+                            <Ionicons name="sparkles-outline" size={16} color="#fff" />
+                        </LinearGradient>
+                        <Text style={styles.cardHeadTitle}>Help & Walkthrough</Text>
+                    </View>
+                    <Text style={styles.helpBody}>
+                        New here or need a refresher? Replay the quick tour that shows how to
+                        create an employee, a shift and wages.
+                    </Text>
+                    <Button title="Replay Walkthrough" onPress={restartProductTour} variant="outline" style={{ marginTop: 4 }} />
+                </Card>
+
                 {/* Danger Zone — permanent account deletion (two-step: confirm first) */}
                 <Card style={styles.dangerCard}>
                     <View style={styles.cardHead}>
@@ -315,7 +331,7 @@ const styles = StyleSheet.create({
     avatar: { width: 64, height: 64, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
     avatarText: { fontSize: 22, fontFamily: FONTS.bold, color: '#fff' },
     photoBtns: { flexDirection: 'row', gap: 8 },
-    photoBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, borderWidth: 1, borderColor: 'rgba(2,69,122,0.2)', borderRadius: RADIUS.sm, paddingHorizontal: 10, paddingVertical: 8 },
+    photoBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, borderWidth: 1, borderColor: 'rgba(37,99,235,0.2)', borderRadius: RADIUS.sm, paddingHorizontal: 10, paddingVertical: 8 },
     photoBtnText: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.5 },
     photoBtnDanger: { flexDirection: 'row', alignItems: 'center', gap: 5, borderWidth: 1, borderColor: 'rgba(186,26,26,0.2)', borderRadius: RADIUS.sm, paddingHorizontal: 10, paddingVertical: 8 },
     photoBtnDangerText: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.error, letterSpacing: 0.5 },
@@ -327,7 +343,7 @@ const styles = StyleSheet.create({
     disabledText: { fontSize: 14, fontFamily: FONTS.regular, color: COLORS.onSurface },
     hint: { fontSize: 11, fontFamily: FONTS.regular, color: COLORS.outline, marginTop: 6 },
 
-    previewBox: { backgroundColor: 'rgba(2,69,122,0.04)', borderWidth: 1, borderColor: 'rgba(2,69,122,0.06)', borderRadius: RADIUS.md, padding: 14, marginTop: 16 },
+    previewBox: { backgroundColor: 'rgba(37,99,235,0.04)', borderWidth: 1, borderColor: 'rgba(37,99,235,0.06)', borderRadius: RADIUS.md, padding: 14, marginTop: 16 },
     previewLabel: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.8, marginBottom: 8 },
     previewValue: { fontSize: 13, fontFamily: FONTS.semiBold, color: COLORS.onSurface, lineHeight: 20 },
     previewMuted: { fontSize: 13, fontFamily: FONTS.regular, color: COLORS.outline },
@@ -339,6 +355,7 @@ const styles = StyleSheet.create({
     dangerIcon: { width: 34, height: 34, borderRadius: 8, alignItems: 'center', justifyContent: 'center', backgroundColor: COLORS.error },
     dangerTitle: { fontSize: 15, fontFamily: FONTS.bold, color: COLORS.error },
     dangerBody: { fontSize: 13, fontFamily: FONTS.regular, color: COLORS.onSurfaceVar, lineHeight: 19, marginBottom: 14 },
+    helpBody: { fontSize: 13, fontFamily: FONTS.regular, color: COLORS.onSurfaceVar, lineHeight: 19, marginBottom: 14 },
     deleteBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingVertical: 13, borderRadius: RADIUS.md, backgroundColor: COLORS.error },
     deleteText: { fontSize: 11, fontFamily: FONTS.bold, color: '#fff', letterSpacing: 0.8 },
 });

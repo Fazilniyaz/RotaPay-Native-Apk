@@ -76,10 +76,10 @@ function toHTML(d: ReportData): string {
     const payRows = d.payments.map((p) => `<tr><td>${esc(p.label)}</td><td>${esc(p.amount.toLocaleString())}</td></tr>`).join('');
     return `<!doctype html><html><head><meta charset="utf-8"/><style>
     body{font-family:-apple-system,Roboto,Helvetica,sans-serif;color:#1b1c1c;padding:24px;}
-    h1{color:#02457a;margin:0 0 4px;font-size:22px;} .sub{color:#707783;font-size:12px;margin:0 0 16px;}
-    h2{color:#02457a;font-size:14px;margin:20px 0 6px;}
+    h1{color:#2563eb;margin:0 0 4px;font-size:22px;} .sub{color:#707783;font-size:12px;margin:0 0 16px;}
+    h2{color:#2563eb;font-size:14px;margin:20px 0 6px;}
     table{width:100%;border-collapse:collapse;font-size:11px;} td,th{border:1px solid #e4e2e2;padding:6px 8px;text-align:left;}
-    th{background:#02457a;color:#fff;} td.k{font-weight:700;color:#02457a;width:40%;}
+    th{background:#2563eb;color:#fff;} td.k{font-weight:700;color:#2563eb;width:40%;}
     </style></head><body>
     <h1>RotoPay Report</h1><p class="sub">${esc(fmtDate(d.period.start))} – ${esc(fmtDate(d.period.end))}</p>
     <table>${summary}</table>

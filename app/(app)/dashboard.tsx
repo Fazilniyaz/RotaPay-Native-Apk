@@ -19,14 +19,22 @@ import { Shift } from '../../lib/types';
 import { money, fmtDateShort, fmtTime, timeAgo } from '../../lib/format';
 import { activityMeta } from '../../lib/activityMeta';
 
+// Vibrant per-hue gradients (electric blue · cyan · violet).
+const GRAD = {
+    blue: ['#2563eb', '#1d4ed8'] as [string, string],
+    blueCyan: ['#2563eb', '#06b6d4'] as [string, string],
+    violet: ['#7c3aed', '#8b5cf6'] as [string, string],
+    cyan: ['#06b6d4', '#0891b2'] as [string, string],
+};
+
 const QUICK_ACTIONS = [
-    { icon: 'time-outline', label: 'Clock In', route: '/(app)/clock' },
-    { icon: 'add-outline', label: 'Add Shift', route: '/(app)/shifts' },
-    { icon: 'document-text-outline', label: 'Reports', route: '/(app)/reports' },
-    { icon: 'briefcase-outline', label: 'Employers', route: '/(app)/employers' },
+    { icon: 'time-outline', label: 'Clock In', route: '/(app)/clock', grad: GRAD.blue },
+    { icon: 'add-outline', label: 'Add Shift', route: '/(app)/shifts', grad: GRAD.blueCyan },
+    { icon: 'document-text-outline', label: 'Reports', route: '/(app)/reports', grad: GRAD.violet },
+    { icon: 'briefcase-outline', label: 'Employers', route: '/(app)/employers', grad: GRAD.cyan },
 ];
 
-const DONUT_COLORS = ['#018abe', '#97cadb', '#001b48', '#02457a', '#02457A', '#d6e8ee'];
+const DONUT_COLORS = ['#2563eb', '#06b6d4', '#7c3aed', '#0ea5e9', '#8b5cf6', '#7dd3fc'];
 const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 const shiftEarnings = (s: Shift) => (s.salaries ?? []).reduce((sum, w) => sum + (w.salary ?? 0), 0);
@@ -154,7 +162,7 @@ export default function DashboardScreen() {
                 <View style={styles.actionsGrid}>
                     {QUICK_ACTIONS.map((a) => (
                         <TouchableOpacity key={a.label} style={styles.actionCard} onPress={() => router.push(a.route as any)} activeOpacity={0.85}>
-                            <LinearGradient colors={[COLORS.gradStart, COLORS.gradEnd]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.actionGrad}>
+                            <LinearGradient colors={a.grad} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.actionGrad}>
                                 <Ionicons name={a.icon as any} size={22} color="#fff" />
                                 <Text style={styles.actionLabel}>{a.label}</Text>
                             </LinearGradient>
@@ -168,12 +176,12 @@ export default function DashboardScreen() {
                     <>
                         {/* Stats */}
                         <View style={styles.statsGrid}>
-                            <StatCard title="This Month" value={money(earnThisMonth)} icon="wallet-outline" change={monthTrend.change} trend={monthTrend.trend} sub="vs last month" />
-                            <StatCard title="This Week" value={`${Math.round(hoursThisWeek * 10) / 10}h`} icon="time-outline" change={weekTrend.change} trend={weekTrend.trend} sub="vs last week" />
+                            <StatCard title="This Month" value={money(earnThisMonth)} icon="wallet-outline" change={monthTrend.change} trend={monthTrend.trend} sub="vs last month" gradient={GRAD.blue} />
+                            <StatCard title="This Week" value={`${Math.round(hoursThisWeek * 10) / 10}h`} icon="time-outline" change={weekTrend.change} trend={weekTrend.trend} sub="vs last week" gradient={GRAD.cyan} />
                         </View>
                         <View style={styles.statsGrid}>
-                            <StatCard title="Upcoming" value={String(upcomingOcc.length)} icon="calendar-outline" sub="scheduled" />
-                            <StatCard title="Employers" value={String(activeEmployers)} icon="business-outline" sub="active" />
+                            <StatCard title="Upcoming" value={String(upcomingOcc.length)} icon="calendar-outline" sub="scheduled" gradient={GRAD.violet} />
+                            <StatCard title="Employers" value={String(activeEmployers)} icon="business-outline" sub="active" gradient={GRAD.blueCyan} />
                         </View>
 
                         {/* Weekly earnings chart */}
@@ -297,7 +305,7 @@ const styles = StyleSheet.create({
     cardTitle: { fontSize: 15, fontFamily: FONTS.semiBold, color: COLORS.onSurface, marginBottom: 16 },
     emptyNote: { fontSize: 13, fontFamily: FONTS.regular, color: COLORS.outline, textAlign: 'center', paddingVertical: 24 },
 
-    chartFooter: { flexDirection: 'row', justifyContent: 'space-between', borderTopWidth: 1, borderTopColor: 'rgba(2,69,122,0.08)', marginTop: 16, paddingTop: 14 },
+    chartFooter: { flexDirection: 'row', justifyContent: 'space-between', borderTopWidth: 1, borderTopColor: 'rgba(37,99,235,0.08)', marginTop: 16, paddingTop: 14 },
     footerItem: { alignItems: 'flex-start' },
     footerLabel: { fontSize: 9, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.5, marginBottom: 3 },
     footerVal: { fontSize: 15, fontFamily: FONTS.bold, color: COLORS.onSurface },
@@ -313,9 +321,9 @@ const styles = StyleSheet.create({
     sectionLabel: { fontSize: 10, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 1, marginBottom: 10 },
     seeAll: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.4 },
 
-    rowBorder: { borderBottomWidth: 1, borderBottomColor: 'rgba(2,69,122,0.06)' },
+    rowBorder: { borderBottomWidth: 1, borderBottomColor: 'rgba(37,99,235,0.06)' },
     shiftRow: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 14 },
-    shiftIcon: { width: 34, height: 34, borderRadius: 8, backgroundColor: 'rgba(2,69,122,0.07)', alignItems: 'center', justifyContent: 'center' },
+    shiftIcon: { width: 34, height: 34, borderRadius: 8, backgroundColor: 'rgba(37,99,235,0.07)', alignItems: 'center', justifyContent: 'center' },
     shiftEmployer: { fontSize: 14, fontFamily: FONTS.semiBold, color: COLORS.onSurface, marginBottom: 2 },
     shiftMeta: { fontSize: 12, fontFamily: FONTS.regular, color: COLORS.outline },
     shiftTime: { fontSize: 12, fontFamily: FONTS.semiBold, color: COLORS.onSurfaceVar },
@@ -325,6 +333,6 @@ const styles = StyleSheet.create({
     activityText: { fontSize: 13, fontFamily: FONTS.medium, color: COLORS.onSurface, marginBottom: 2 },
     activityTime: { fontSize: 11, fontFamily: FONTS.regular, color: COLORS.outline, letterSpacing: 0.3 },
 
-    seeAllBtn: { padding: 14, alignItems: 'center', borderTopWidth: 1, borderTopColor: 'rgba(2,69,122,0.06)' },
+    seeAllBtn: { padding: 14, alignItems: 'center', borderTopWidth: 1, borderTopColor: 'rgba(37,99,235,0.06)' },
     seeAllBtnText: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.8 },
 });

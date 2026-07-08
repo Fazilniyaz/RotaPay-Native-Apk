@@ -1,10 +1,10 @@
-// Blue brand palette (manager-supplied), aligned with RotoPay-Admin-WebApp tokens.
-// B1 #D6E8EE · B2 #97CADB · B3 #018ABE · B4 #02457A · B5 #001B48
+// Vibrant palette (manager-supplied), aligned with RotoPay-Admin-WebApp tokens.
+// Electric blue #2563EB · cyan #06B6D4 · violet #7C3AED (+ sky/light accents)
 export const COLORS = {
-    primary:          '#02457A',   // B4 — main brand
-    primaryMid:       '#018ABE',   // B3 — brighter accent
-    secondary:        '#001B48',   // B5 — deep navy
-    tertiary:         '#001B48',   // B5
+    primary:          '#2563EB',   // electric blue — main brand
+    primaryMid:       '#06B6D4',   // cyan — brighter accent
+    secondary:        '#1D4ED8',   // blue-700 — deep
+    tertiary:         '#7C3AED',   // violet — accent
     error:            '#ba1a1a',
     surface:          '#fbf9f8',
     surfaceContainer: '#efeded',
@@ -15,8 +15,8 @@ export const COLORS = {
     onSurfaceVar:     '#404752',
     outline:          '#707783',
     outlineVar:       '#c0c7d4',
-    gradStart:        '#018ABE',   // B3 → B4 cerulean→ocean gradient
-    gradEnd:          '#02457A',
+    gradStart:        '#2563EB',   // electric blue → cyan vibrant gradient
+    gradEnd:          '#06B6D4',
 };
 
 export const FONTS = {

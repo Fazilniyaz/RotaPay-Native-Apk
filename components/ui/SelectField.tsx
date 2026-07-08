@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingVertical: 14,
         borderBottomWidth: 1,
-        borderBottomColor: 'rgba(2,69,122,0.06)',
+        borderBottomColor: 'rgba(37,99,235,0.06)',
     },
     optionText: { fontSize: 15, fontFamily: FONTS.medium, color: COLORS.onSurface },
 });

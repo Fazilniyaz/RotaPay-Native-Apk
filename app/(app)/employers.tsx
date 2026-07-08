@@ -228,10 +228,10 @@ export default function EmployersScreen() {
                                         <View style={{ flex: 1 }}>
                                             <View style={styles.empNameRow}>
                                                 <Text style={styles.empName} numberOfLines={1}>{emp.employerName}</Text>
-                                                <View style={[styles.statusDot, { backgroundColor: emp.isActive ? '#018abe' : COLORS.outlineVar }]} />
+                                                <View style={[styles.statusDot, { backgroundColor: emp.isActive ? '#06b6d4' : COLORS.outlineVar }]} />
                                                 {emp.id === defaultEmployerId && (
                                                     <View style={styles.defaultBadge}>
-                                                        <Ionicons name="star" size={9} color="#001b48" />
+                                                        <Ionicons name="star" size={9} color="#1d4ed8" />
                                                         <Text style={styles.defaultBadgeText}>DEFAULT</Text>
                                                     </View>
                                                 )}
@@ -248,7 +248,7 @@ export default function EmployersScreen() {
                                             <Text style={styles.statCellLabel}>SHIFTS</Text>
                                             <Text style={styles.statCellVal}>{shiftCount}</Text>
                                         </View>
-                                        <View style={[styles.statCell, { borderLeftWidth: 1, borderLeftColor: 'rgba(2,69,122,0.08)' }]}>
+                                        <View style={[styles.statCell, { borderLeftWidth: 1, borderLeftColor: 'rgba(37,99,235,0.08)' }]}>
                                             <Text style={styles.statCellLabel}>TOTAL PAY</Text>
                                             <Text style={[styles.statCellVal, { color: COLORS.primary }]}>{money(totalPay)}</Text>
                                         </View>
@@ -270,9 +270,9 @@ export default function EmployersScreen() {
                                         style={[styles.defaultBtn, emp.id === defaultEmployerId && styles.defaultBtnActive]}
                                     >
                                         {settingDefault === emp.id ? (
-                                            <ActivityIndicator size="small" color="#001b48" />
+                                            <ActivityIndicator size="small" color="#1d4ed8" />
                                         ) : (
-                                            <Ionicons name={emp.id === defaultEmployerId ? 'star' : 'star-outline'} size={14} color="#001b48" />
+                                            <Ionicons name={emp.id === defaultEmployerId ? 'star' : 'star-outline'} size={14} color="#1d4ed8" />
                                         )}
                                         <Text style={styles.defaultBtnText}>
                                             {emp.id === defaultEmployerId ? 'DEFAULT EMPLOYEE' : 'SET AS DEFAULT'}
@@ -387,20 +387,20 @@ const styles = StyleSheet.create({
     empStoreRow: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 },
     empStore: { fontSize: 12, fontFamily: FONTS.regular, color: COLORS.outline, flex: 1 },
 
-    statsStrip: { flexDirection: 'row', backgroundColor: 'rgba(2,69,122,0.04)', borderRadius: RADIUS.md, borderWidth: 1, borderColor: 'rgba(2,69,122,0.06)', padding: 10, marginBottom: 12 },
+    statsStrip: { flexDirection: 'row', backgroundColor: 'rgba(37,99,235,0.04)', borderRadius: RADIUS.md, borderWidth: 1, borderColor: 'rgba(37,99,235,0.06)', padding: 10, marginBottom: 12 },
     statCell: { flex: 1, alignItems: 'center' },
     statCellLabel: { fontSize: 9, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.4, marginBottom: 2 },
     statCellVal: { fontSize: 15, fontFamily: FONTS.semiBold, color: COLORS.onSurface },
 
     viewShiftsBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 11, borderRadius: RADIUS.sm },
     viewShiftsText: { fontSize: 11, fontFamily: FONTS.bold, color: '#fff', letterSpacing: 0.6 },
-    defaultBadge: { flexDirection: 'row', alignItems: 'center', gap: 3, backgroundColor: 'rgba(0,27,72,0.1)', borderRadius: 10, paddingHorizontal: 6, paddingVertical: 2 },
-    defaultBadgeText: { fontSize: 8, fontFamily: FONTS.bold, color: '#001b48', letterSpacing: 0.5 },
-    defaultBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 10, borderRadius: RADIUS.sm, borderWidth: 1, borderColor: 'rgba(0,27,72,0.25)', marginBottom: 10 },
-    defaultBtnActive: { backgroundColor: 'rgba(0,27,72,0.1)', borderColor: 'transparent' },
-    defaultBtnText: { fontSize: 11, fontFamily: FONTS.bold, color: '#001b48', letterSpacing: 0.5 },
+    defaultBadge: { flexDirection: 'row', alignItems: 'center', gap: 3, backgroundColor: 'rgba(29,78,216,0.1)', borderRadius: 10, paddingHorizontal: 6, paddingVertical: 2 },
+    defaultBadgeText: { fontSize: 8, fontFamily: FONTS.bold, color: '#1d4ed8', letterSpacing: 0.5 },
+    defaultBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 10, borderRadius: RADIUS.sm, borderWidth: 1, borderColor: 'rgba(29,78,216,0.25)', marginBottom: 10 },
+    defaultBtnActive: { backgroundColor: 'rgba(29,78,216,0.1)', borderColor: 'transparent' },
+    defaultBtnText: { fontSize: 11, fontFamily: FONTS.bold, color: '#1d4ed8', letterSpacing: 0.5 },
     empActions: { flexDirection: 'row', gap: 10 },
-    editBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 10, borderRadius: RADIUS.sm, borderWidth: 1, borderColor: 'rgba(2,69,122,0.15)' },
+    editBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 10, borderRadius: RADIUS.sm, borderWidth: 1, borderColor: 'rgba(37,99,235,0.15)' },
     editText: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.5 },
     delBtn: { flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 6, paddingVertical: 10, borderRadius: RADIUS.sm, borderWidth: 1, borderColor: 'rgba(186,26,26,0.2)' },
     delText: { fontSize: 11, fontFamily: FONTS.bold, color: COLORS.error, letterSpacing: 0.5 },
@@ -412,7 +412,7 @@ const styles = StyleSheet.create({
     toggleLabel: { fontSize: 14, fontFamily: FONTS.medium, color: COLORS.onSurface },
 
     emptyNote: { fontSize: 13, fontFamily: FONTS.regular, color: COLORS.outline, textAlign: 'center', paddingVertical: 24 },
-    shiftRow: { flexDirection: 'row', alignItems: 'center', gap: 12, borderWidth: 1, borderColor: 'rgba(2,69,122,0.08)', borderRadius: RADIUS.md, padding: 12, marginBottom: 10 },
+    shiftRow: { flexDirection: 'row', alignItems: 'center', gap: 12, borderWidth: 1, borderColor: 'rgba(37,99,235,0.08)', borderRadius: RADIUS.md, padding: 12, marginBottom: 10 },
     shiftRowTop: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 4 },
     shiftRowDate: { fontSize: 14, fontFamily: FONTS.semiBold, color: COLORS.onSurface },
     shiftRowTime: { fontSize: 12, fontFamily: FONTS.regular, color: COLORS.outline },

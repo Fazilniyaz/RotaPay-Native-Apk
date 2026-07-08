@@ -224,7 +224,7 @@ export default function ClockScreen() {
                                                         <Text style={styles.estLabel}>EST. PAY</Text>
                                                         <Text style={[styles.estVal, { color: COLORS.secondary }]}>{money(est)}</Text>
                                                     </View>
-                                                    <View style={[styles.estCell, { borderLeftWidth: 1, borderLeftColor: 'rgba(2,69,122,0.08)' }]}>
+                                                    <View style={[styles.estCell, { borderLeftWidth: 1, borderLeftColor: 'rgba(37,99,235,0.08)' }]}>
                                                         <Text style={styles.estLabel}>RATE</Text>
                                                         <Text style={[styles.estVal, { color: COLORS.primary }]}>{currencySymbol()}{rate}/h</Text>
                                                     </View>
@@ -312,11 +312,11 @@ const styles = StyleSheet.create({
     avatarText: { fontSize: 13, fontFamily: FONTS.bold, color: '#fff' },
     activeName: { fontSize: 14, fontFamily: FONTS.bold, color: COLORS.onSurface, marginBottom: 2 },
     activeMeta: { fontSize: 11, fontFamily: FONTS.regular, color: COLORS.outline },
-    liveBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: 'rgba(0,27,72,0.12)', borderRadius: 999, paddingHorizontal: 8, paddingVertical: 4 },
-    liveDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#018abe' },
-    liveText: { fontSize: 9, fontFamily: FONTS.bold, color: '#001b48', letterSpacing: 0.5 },
+    liveBadge: { flexDirection: 'row', alignItems: 'center', gap: 4, backgroundColor: 'rgba(29,78,216,0.12)', borderRadius: 999, paddingHorizontal: 8, paddingVertical: 4 },
+    liveDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: '#06b6d4' },
+    liveText: { fontSize: 9, fontFamily: FONTS.bold, color: '#1d4ed8', letterSpacing: 0.5 },
     elapsed: { fontSize: 38, fontFamily: FONTS.bold, color: COLORS.onSurface, textAlign: 'center', letterSpacing: 1 },
-    estStrip: { flexDirection: 'row', backgroundColor: 'rgba(2,69,122,0.04)', borderRadius: RADIUS.md, borderWidth: 1, borderColor: 'rgba(2,69,122,0.06)', padding: 10, marginVertical: 14 },
+    estStrip: { flexDirection: 'row', backgroundColor: 'rgba(37,99,235,0.04)', borderRadius: RADIUS.md, borderWidth: 1, borderColor: 'rgba(37,99,235,0.06)', padding: 10, marginVertical: 14 },
     estCell: { flex: 1, alignItems: 'center' },
     estLabel: { fontSize: 9, fontFamily: FONTS.bold, color: COLORS.outline, letterSpacing: 0.4, marginBottom: 2 },
     estVal: { fontSize: 14, fontFamily: FONTS.semiBold },
@@ -324,7 +324,7 @@ const styles = StyleSheet.create({
     clockOutText: { fontSize: 11, fontFamily: FONTS.bold, color: '#fff', letterSpacing: 1 },
 
     emptyNote: { fontSize: 13, fontFamily: FONTS.regular, color: COLORS.outline, textAlign: 'center', padding: 24 },
-    rowBorder: { borderBottomWidth: 1, borderBottomColor: 'rgba(2,69,122,0.06)' },
+    rowBorder: { borderBottomWidth: 1, borderBottomColor: 'rgba(37,99,235,0.06)' },
     histRow: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 14 },
     histAvatar: { width: 36, height: 36, borderRadius: 8, alignItems: 'center', justifyContent: 'center' },
     histAvatarText: { fontSize: 11, fontFamily: FONTS.bold, color: '#fff' },
