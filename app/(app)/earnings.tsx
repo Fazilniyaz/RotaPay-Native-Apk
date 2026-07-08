@@ -18,7 +18,7 @@ import { listCalendar } from '../../lib/services/calendar';
 import { getRate } from '../../lib/services/currency';
 import { money, moneyIn, currencySymbol } from '../../lib/format';
 
-const DONUT_COLORS = ['#63c1bb', '#3A9295', '#105f68', '#3a9295', '#105f68', '#b45309'];
+const DONUT_COLORS = ['#018abe', '#02457A', '#001b48', '#02457a', '#001b48', '#b45309'];
 const WEEKDAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 function startOfWeek(d: Date): Date {
@@ -307,13 +307,13 @@ const styles = StyleSheet.create({
     legendDot: { width: 10, height: 10, borderRadius: 5 },
     legendLabel: { fontSize: 13, fontFamily: FONTS.medium, color: COLORS.onSurface, flexShrink: 1 },
     legendVal: { fontSize: 13, fontFamily: FONTS.semiBold, color: COLORS.outline },
-    legendTotal: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderTopWidth: 1, borderTopColor: 'rgba(58,146,149,0.08)', paddingTop: 8, marginTop: 4 },
+    legendTotal: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', borderTopWidth: 1, borderTopColor: 'rgba(2,69,122,0.08)', paddingTop: 8, marginTop: 4 },
     legendTotalLabel: { fontSize: 13, fontFamily: FONTS.bold, color: COLORS.onSurface },
     legendTotalVal: { fontSize: 14, fontFamily: FONTS.bold, color: COLORS.primary },
 
     payHead: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 5 },
     payLabel: { fontSize: 12, fontFamily: FONTS.medium, color: COLORS.outline },
     payVal: { fontSize: 12, fontFamily: FONTS.semiBold, color: COLORS.primary },
-    payTrack: { height: 12, borderRadius: 6, backgroundColor: 'rgba(58,146,149,0.06)', overflow: 'hidden' },
+    payTrack: { height: 12, borderRadius: 6, backgroundColor: 'rgba(2,69,122,0.06)', overflow: 'hidden' },
     payFill: { height: '100%', borderRadius: 6 },
 });

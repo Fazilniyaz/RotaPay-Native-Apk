@@ -1,10 +1,10 @@
-// Teal brand palette (manager-supplied), aligned with RotoPay-Admin-WebApp tokens.
-// L1 #C8E6E2 · L2 #9ED5D1 · L3 #63C1BB · L4 #3A9295 · L5 #105F68
+// Blue brand palette (manager-supplied), aligned with RotoPay-Admin-WebApp tokens.
+// B1 #D6E8EE · B2 #97CADB · B3 #018ABE · B4 #02457A · B5 #001B48
 export const COLORS = {
-    primary:          '#3A9295',   // L4 — main brand
-    primaryMid:       '#63C1BB',   // L3 — brighter accent
-    secondary:        '#105F68',   // L5 — deep teal
-    tertiary:         '#105F68',   // L5
+    primary:          '#02457A',   // B4 — main brand
+    primaryMid:       '#018ABE',   // B3 — brighter accent
+    secondary:        '#001B48',   // B5 — deep navy
+    tertiary:         '#001B48',   // B5
     error:            '#ba1a1a',
     surface:          '#fbf9f8',
     surfaceContainer: '#efeded',
@@ -15,8 +15,8 @@ export const COLORS = {
     onSurfaceVar:     '#404752',
     outline:          '#707783',
     outlineVar:       '#c0c7d4',
-    gradStart:        '#3A9295',   // L4 → L5 rich teal gradient
-    gradEnd:          '#105F68',
+    gradStart:        '#018ABE',   // B3 → B4 cerulean→ocean gradient
+    gradEnd:          '#02457A',
 };
 
 export const FONTS = {

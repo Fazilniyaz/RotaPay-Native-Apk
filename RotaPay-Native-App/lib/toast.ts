@@ -17,8 +17,8 @@ export type ToastType = 'error' | 'success' | 'info';
 
 const ACCENT: Record<ToastType, string> = {
   error: '#ba1a1a',
-  success: '#105f68',
-  info: '#3a9295',
+  success: '#001b48',
+  info: '#02457a',
 };
 
 // Inline SVG icons ({c} is swapped for the accent colour) — no asset/font deps.
@@ -62,7 +62,7 @@ function showWeb(title: string, message?: string, type?: ToastType): void {
   const el = document.createElement('div');
   el.style.cssText =
     `pointer-events:auto;cursor:pointer;box-sizing:border-box;width:100%;max-width:420px;display:flex;gap:11px;align-items:flex-start;` +
-    `background:#ffffff;border:1px solid rgba(58,146,149,0.08);border-left:4px solid ${color};border-radius:10px;padding:13px 14px;` +
+    `background:#ffffff;border:1px solid rgba(2,69,122,0.08);border-left:4px solid ${color};border-radius:10px;padding:13px 14px;` +
     `box-shadow:0 10px 28px rgba(0,0,0,0.16);font-family:'Montserrat_500Medium',system-ui,-apple-system,sans-serif;` +
     `transform:translateY(-12px);opacity:0;transition:transform .22s ease,opacity .22s ease;`;
 

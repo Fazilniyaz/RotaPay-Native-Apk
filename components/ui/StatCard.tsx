@@ -23,7 +23,7 @@ export default function StatCard({
 }) {
     const up = trend === 'up';
     const down = trend === 'down';
-    const trendColor = up ? '#105f68' : down ? '#ba1a1a' : COLORS.primary;
+    const trendColor = up ? '#001b48' : down ? '#ba1a1a' : COLORS.primary;
 
     return (
         <View style={styles.card}>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.surfaceLowest,
         borderRadius: RADIUS.lg,
         borderWidth: 1,
-        borderColor: 'rgba(58,146,149,0.08)',
+        borderColor: 'rgba(2,69,122,0.08)',
         padding: 16,
         ...SHADOW.card,
     },

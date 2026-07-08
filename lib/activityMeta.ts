@@ -10,17 +10,17 @@ export interface ActivityMeta {
 }
 
 const MAP: Record<string, ActivityMeta> = {
-  shift_added: { icon: 'add-circle-outline', color: '#63c1bb', bg: 'rgba(0,119,204,0.12)' },
-  shift_updated: { icon: 'create-outline', color: '#63c1bb', bg: 'rgba(0,119,204,0.12)' },
+  shift_added: { icon: 'add-circle-outline', color: '#018abe', bg: 'rgba(1,138,190,0.12)' },
+  shift_updated: { icon: 'create-outline', color: '#018abe', bg: 'rgba(1,138,190,0.12)' },
   shift_removed: { icon: 'trash-outline', color: '#ba1a1a', bg: 'rgba(186,26,26,0.12)' },
-  shift_reminder: { icon: 'alarm-outline', color: '#3a9295', bg: 'rgba(58,146,149,0.12)' },
-  shift_water: { icon: 'water-outline', color: '#3a9295', bg: 'rgba(8,145,178,0.12)' },
+  shift_reminder: { icon: 'alarm-outline', color: '#02457a', bg: 'rgba(2,69,122,0.12)' },
+  shift_water: { icon: 'water-outline', color: '#02457a', bg: 'rgba(1,138,190,0.12)' },
   profile_updated: { icon: 'person-outline', color: '#888', bg: 'rgba(136,136,136,0.10)' },
-  payment_confirmed: { icon: 'wallet-outline', color: '#105f68', bg: 'rgba(0,133,87,0.12)' },
-  employee_added: { icon: 'business-outline', color: '#63c1bb', bg: 'rgba(0,119,204,0.12)' },
-  wage_added: { icon: 'cash-outline', color: '#105f68', bg: 'rgba(0,133,87,0.12)' },
-  clock_in: { icon: 'log-in-outline', color: '#3A9295', bg: 'rgba(55,211,107,0.15)' },
-  clock_out: { icon: 'log-out-outline', color: '#3A9295', bg: 'rgba(55,211,107,0.15)' },
+  payment_confirmed: { icon: 'wallet-outline', color: '#001b48', bg: 'rgba(0,27,72,0.12)' },
+  employee_added: { icon: 'business-outline', color: '#018abe', bg: 'rgba(1,138,190,0.12)' },
+  wage_added: { icon: 'cash-outline', color: '#001b48', bg: 'rgba(0,27,72,0.12)' },
+  clock_in: { icon: 'log-in-outline', color: '#02457A', bg: 'rgba(1,138,190,0.15)' },
+  clock_out: { icon: 'log-out-outline', color: '#02457A', bg: 'rgba(1,138,190,0.15)' },
 };
 
 export function activityMeta(type: string): ActivityMeta {

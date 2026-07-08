@@ -15,9 +15,9 @@ import { money } from '../../lib/format';
 const MENU_ITEMS: { icon: string; color: string; label: string; route: string }[][] = [
     [
         { icon: 'time-outline', color: COLORS.secondary, label: 'Clock', route: '/(app)/clock' },
-        { icon: 'calendar-outline', color: '#105f68', label: 'Calendar', route: '/(app)/calendar' },
+        { icon: 'calendar-outline', color: '#001b48', label: 'Calendar', route: '/(app)/calendar' },
         { icon: 'briefcase-outline', color: COLORS.primary, label: 'Employers', route: '/(app)/employers' },
-        { icon: 'bar-chart-outline', color: '#3a9295', label: 'Reports', route: '/(app)/reports' },
+        { icon: 'bar-chart-outline', color: '#02457a', label: 'Reports', route: '/(app)/reports' },
         { icon: 'notifications-outline', color: COLORS.gradStart, label: 'Notifications', route: '/(app)/notifications' },
     ],
     [
