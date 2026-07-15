@@ -37,7 +37,7 @@ export function DeviceIntegrityGate() {
                     <Text style={styles.body}>
                         This device appears to be {reasons.join(', ').toLowerCase() || 'compromised'}.
                         On rooted / jailbroken devices your tokens and personal data can no longer be
-                        protected by the operating system, so RotoPay restricts sensitive features here.
+                        protected by the operating system, so payRoto restricts sensitive features here.
                     </Text>
 
                     {!ready ? (

@@ -83,9 +83,9 @@ export default function RegisterScreen() {
                 <LinearGradient colors={[COLORS.gradStart, COLORS.gradEnd]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.banner}>
                     <View style={styles.logoRow}>
                         <View style={styles.logoIcon}><Text style={{ fontSize: 26 }}>💳</Text></View>
-                        <Text style={styles.logoText}>RotoPay</Text>
+                        <Text style={styles.logoText}>payRoto</Text>
                     </View>
-                    <Text style={styles.headline}>Join RotoPay</Text>
+                    <Text style={styles.headline}>Join payRoto</Text>
                     <Text style={styles.tagline}>Take control of your shifts & earnings</Text>
                 </LinearGradient>
 

@@ -30,7 +30,7 @@ export default function SplashPage() {
             <View style={styles.logoBox}>
                 <Text style={styles.logoEmoji}>💳</Text>
             </View>
-            <Text style={styles.brand}>RotoPay</Text>
+            <Text style={styles.brand}>payRoto</Text>
             <Text style={styles.tagline}>Financial & scheduling management</Text>
             <ActivityIndicator color="rgba(255,255,255,0.7)" style={{ marginTop: 48 }} />
         </LinearGradient>

@@ -115,7 +115,7 @@ export default function MoreScreen() {
 
                 {/* Version */}
                 <View style={styles.footer}>
-                    <Text style={styles.footerBrand}>RotoPay</Text>
+                    <Text style={styles.footerBrand}>payRoto</Text>
                     <Text style={styles.footerVer}>Version 1.0.0</Text>
                 </View>
 

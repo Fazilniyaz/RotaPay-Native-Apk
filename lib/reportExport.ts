@@ -15,7 +15,7 @@ const money = (code: string, n?: number | null) =>
     `${code} ${(n ?? 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
 const ymd = (iso: string) => new Date(iso).toISOString().slice(0, 10);
-const fileBase = (d: ReportData) => `RotoPay-Report_${ymd(d.period.start)}_${ymd(d.period.end)}`;
+const fileBase = (d: ReportData) => `payRoto-Report_${ymd(d.period.start)}_${ymd(d.period.end)}`;
 
 const summaryRows = (d: ReportData): [string, string][] => [
     ['Period', `${fmtDate(d.period.start)} – ${fmtDate(d.period.end)} (${d.period.months} month${d.period.months > 1 ? 's' : ''})`],
@@ -38,7 +38,7 @@ function csvCell(v: string | number): string {
 const csvRow = (cells: (string | number)[]) => cells.map(csvCell).join(',');
 
 function toCSV(d: ReportData): string {
-    const lines: string[] = ['RotoPay Report'];
+    const lines: string[] = ['payRoto Report'];
     for (const [k, v] of summaryRows(d)) lines.push(csvRow([k, v]));
     lines.push('', 'Shifts', csvRow(['Date', 'Name', 'Type', 'Hours', `Earned (${d.currency})`]));
     for (const s of d.shifts) lines.push(csvRow([fmtDate(s.date), s.name, s.type, s.hours, s.earned]));
@@ -52,7 +52,7 @@ function toCSV(d: ReportData): string {
 // ── Excel (SheetJS) ─────────────────
 function toWorkbookBase64(d: ReportData): string {
     const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['RotoPay Report'], [], ...summaryRows(d)]), 'Summary');
+    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['payRoto Report'], [], ...summaryRows(d)]), 'Summary');
     XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(
         d.shifts.map((s) => ({ Date: fmtDate(s.date), Name: s.name, Type: s.type, Hours: s.hours, [`Earned (${d.currency})`]: s.earned }))
     ), 'Shifts');
@@ -81,7 +81,7 @@ function toHTML(d: ReportData): string {
     table{width:100%;border-collapse:collapse;font-size:11px;} td,th{border:1px solid #e4e2e2;padding:6px 8px;text-align:left;}
     th{background:#2563eb;color:#fff;} td.k{font-weight:700;color:#2563eb;width:40%;}
     </style></head><body>
-    <h1>RotoPay Report</h1><p class="sub">${esc(fmtDate(d.period.start))} – ${esc(fmtDate(d.period.end))}</p>
+    <h1>payRoto Report</h1><p class="sub">${esc(fmtDate(d.period.start))} – ${esc(fmtDate(d.period.end))}</p>
     <table>${summary}</table>
     <h2>Shifts</h2><table><tr><th>Date</th><th>Name</th><th>Type</th><th>Hours</th><th>Earned (${esc(d.currency)})</th></tr>${shiftRows}</table>
     <h2>Wages</h2><table><tr><th>Shift</th><th>Employee</th><th>Rate</th><th>Cur</th><th>Value</th></tr>${wageRows}</table>

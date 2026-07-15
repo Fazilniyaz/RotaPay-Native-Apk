@@ -63,7 +63,7 @@ export default function LoginScreen() {
                 <LinearGradient colors={[COLORS.gradStart, COLORS.gradEnd]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.banner}>
                     <View style={styles.bannerLogoRow}>
                         <View style={styles.bannerLogoIcon}><Text style={{ fontSize: 28 }}>💳</Text></View>
-                        <Text style={styles.bannerLogoText}>RotoPay</Text>
+                        <Text style={styles.bannerLogoText}>payRoto</Text>
                     </View>
                     <Text style={styles.bannerHeadline}>Financial precision,{'\n'}delivered.</Text>
                     <View style={styles.featureList}>
@@ -84,10 +84,10 @@ export default function LoginScreen() {
                     {/* Logo top-center of the form */}
                     <View style={styles.formLogo}>
                         <View style={styles.formLogoIcon}><Text style={{ fontSize: 26 }}>💳</Text></View>
-                        <Text style={styles.formLogoText}>RotoPay</Text>
+                        <Text style={styles.formLogoText}>payRoto</Text>
                     </View>
                     <Text style={styles.heading}>Welcome back</Text>
-                    <Text style={styles.subheading}>Sign in to your RotoPay account</Text>
+                    <Text style={styles.subheading}>Sign in to your payRoto account</Text>
 
                     <InputField
                         label="Email Address" icon="mail-outline"

@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "RotoPay",
+    "name": "payRoto",
     "slug": "rotopay-native",
     "version": "1.0.0",
     "scheme": "rotopay",
@@ -48,7 +48,7 @@
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "RotoPay uses your location to auto-fill your workplace location when it sets up a default employee for you."
+          "locationWhenInUsePermission": "payRoto uses your location to auto-fill your workplace location when it sets up a default employee for you."
         }
       ],
       [

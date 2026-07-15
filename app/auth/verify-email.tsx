@@ -35,7 +35,7 @@ export default function VerifyEmailDeepLink() {
 
     return (
         <View style={[styles.container, { paddingTop: insets.top + 40 }]}>
-            <Text style={styles.brand}>RotoPay</Text>
+            <Text style={styles.brand}>payRoto</Text>
 
             {status === 'loading' && (
                 <>

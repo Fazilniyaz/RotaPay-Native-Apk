@@ -42,7 +42,7 @@ interface Step {
 const STEPS: Step[] = [
     {
         icon: 'sparkles',
-        title: 'Welcome to RotaPay 👋',
+        title: 'Welcome to payRoto 👋',
         body: "Let's take 30 seconds to show you the essentials — creating an employee, a shift and wages. You can skip anytime.",
     },
     {
@@ -58,7 +58,7 @@ const STEPS: Step[] = [
     {
         icon: 'cash',
         title: '3. Set wages on a shift',
-        body: 'While creating a shift, add its pay rate (hourly or fixed). RotaPay uses it to total your earnings automatically.',
+        body: 'While creating a shift, add its pay rate (hourly or fixed). payRoto uses it to total your earnings automatically.',
     },
     {
         icon: 'calendar',

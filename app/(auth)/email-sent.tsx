@@ -31,7 +31,7 @@ export default function EmailSentScreen() {
 
     return (
         <View style={[styles.container, { paddingTop: insets.top + 40 }]}>
-            <Text style={styles.brand}>RotoPay</Text>
+            <Text style={styles.brand}>payRoto</Text>
 
             {/* Animated icon */}
             <LinearGradient colors={[COLORS.gradStart, COLORS.gradEnd]} style={styles.iconCircle}>
@@ -65,7 +65,7 @@ export default function EmailSentScreen() {
                 </Text>
             </View>
 
-            <Text style={styles.footer}>© 2024 RotoPay Financial Systems</Text>
+            <Text style={styles.footer}>© 2024 payRoto Financial Systems</Text>
         </View>
     );
 }
