@@ -15,7 +15,11 @@
     },
     "production": {
       "android": { "buildType": "app-bundle" },
-      "ios": { "buildConfiguration": "Release" }
+      "ios": { "buildConfiguration": "Release" },
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://payroto.com",
+        "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID": "689703415437-aq6o86g8h77k2fijina9hf8l41480482.apps.googleusercontent.com"
+      }
     }
   },
   "submit": {

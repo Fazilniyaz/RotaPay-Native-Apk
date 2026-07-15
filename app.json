@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "payRoto",
-    "slug": "rotopay-native",
+    "slug": "payroto-native",
     "version": "1.0.0",
     "scheme": "rotopay",
     "orientation": "portrait",
@@ -26,7 +26,9 @@
       },
       "permissions": [
         "INTERNET",
-        "ACCESS_NETWORK_STATE"
+        "ACCESS_NETWORK_STATE",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
       ]
     },
     "plugins": [
@@ -57,7 +59,8 @@
           "android": {
             "enableProguardInReleaseBuilds": true,
             "enableShrinkResourcesInReleaseBuilds": true,
-            "extraProguardRules": "-keepattributes *Annotation*,Signature,Exceptions\n-keep,allowobfuscation @interface com.facebook.proguard.annotations.DoNotStrip\n-keep @com.facebook.proguard.annotations.DoNotStrip class *\n-dontwarn okio.**\n-dontwarn javax.annotation.**"
+            "extraProguardRules": "-keepattributes *Annotation*,Signature,Exceptions\n-keep,allowobfuscation @interface com.facebook.proguard.annotations.DoNotStrip\n-keep @com.facebook.proguard.annotations.DoNotStrip class *\n-dontwarn okio.**\n-dontwarn javax.annotation.**",
+            "enableMinifyInReleaseBuilds": true
           },
           "ios": {
             "deploymentTarget": "15.1"
@@ -69,9 +72,11 @@
       "typedRoutes": true
     },
     "extra": {
+      "router": {},
       "eas": {
-        "projectId": "rotopay-native-app"
+        "projectId": "6966f011-7b05-4021-939b-6cfb2a902edd"
       }
-    }
+    },
+    "owner": "jadvix-ltd"
   }
 }
