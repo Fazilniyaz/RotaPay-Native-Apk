@@ -31,7 +31,11 @@ export default function ForgotPasswordScreen() {
     };
 
     return (
-        <ScrollView style={styles.scroll} contentContainerStyle={[styles.container, { paddingTop: insets.top + 16 }]}>
+        <ScrollView
+            style={styles.scroll}
+            contentContainerStyle={[styles.container, { paddingTop: insets.top + 16 }]}
+            removeClippedSubviews={false}
+        >
             {/* Back */}
             <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
                 <Ionicons name="arrow-back" size={20} color={COLORS.primary} />

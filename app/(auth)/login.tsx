@@ -57,7 +57,15 @@ export default function LoginScreen() {
 
     return (
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{ flex: 1 }}>
-            <ScrollView style={{ backgroundColor: COLORS.surface }} contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+            {/* removeClippedSubviews={false}: with the Fabric renderer, clipping re-parents
+                children as this screen unmounts on navigate, which crashes the app
+                ("child already has a parent" in ReactClippingViewManager). */}
+            <ScrollView
+                style={{ backgroundColor: COLORS.surface }}
+                contentContainerStyle={styles.container}
+                keyboardShouldPersistTaps="handled"
+                removeClippedSubviews={false}
+            >
 
                 {/* Gradient banner — mirrors WebApp left panel */}
                 <LinearGradient colors={[COLORS.gradStart, COLORS.gradEnd]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.banner}>

@@ -19,7 +19,7 @@
     },
     "android": {
       "package": "com.jadvix.payroto",
-      "versionCode": 3,
+      "versionCode": 4,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#007BD2"

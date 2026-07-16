@@ -75,7 +75,11 @@ export default function ResetPasswordScreen() {
     }
 
     return (
-        <ScrollView style={styles.scroll} contentContainerStyle={[styles.container, { paddingTop: insets.top + 16 }]}>
+        <ScrollView
+            style={styles.scroll}
+            contentContainerStyle={[styles.container, { paddingTop: insets.top + 16 }]}
+            removeClippedSubviews={false}
+        >
             <TouchableOpacity style={styles.backBtn} onPress={() => router.back()}>
                 <Ionicons name="arrow-back" size={20} color={COLORS.primary} />
                 <Text style={styles.backText}>Back</Text>
