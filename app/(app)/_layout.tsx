@@ -53,7 +53,11 @@ export default function AppLayout() {
 
     return (
         <>
-            <Stack screenOptions={{ headerShown: false, animation: 'fade' }} />
+            {/* No `animation` override: a fade transition keeps the outgoing and
+                incoming screens mounted at once, which trips a Fabric view
+                re-parenting crash ("addViewAt: ... child already has a parent")
+                on login -> dashboard. */}
+            <Stack screenOptions={{ headerShown: false }} />
             {/* Restricts the app on a rooted/jailbroken device (point 3). */}
             <DeviceIntegrityGate />
             {/* Blocks the app until the first (default) employee is created. */}
