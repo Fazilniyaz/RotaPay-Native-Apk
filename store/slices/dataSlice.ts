@@ -41,6 +41,10 @@ interface DataState {
   defaultEmployerId: string | null;
   loaded: boolean;
   loading: boolean;
+  // True once employers alone have arrived. The onboarding gate keys off this so
+  // it can decide immediately, instead of waiting for the full seven-module
+  // preload (`loaded`) to finish.
+  employersLoaded: boolean;
 }
 
 const initialState: DataState = {
@@ -54,6 +58,7 @@ const initialState: DataState = {
   defaultEmployerId: null,
   loaded: false,
   loading: false,
+  employersLoaded: false,
 };
 
 // Fetch every module in parallel. `force` re-fetches even if already loaded.
@@ -149,6 +154,7 @@ const dataSlice = createSlice({
         Object.assign(s, a.payload);
         s.loaded = true;
         s.loading = false;
+        s.employersLoaded = true;
       })
       .addCase(loadAllData.rejected, (s) => {
         s.loading = false;
@@ -162,6 +168,7 @@ const dataSlice = createSlice({
       .addCase(refreshEmployers.fulfilled, (s, a) => {
         s.employers = a.payload.data;
         s.defaultEmployerId = a.payload.defaultEmployerId ?? null;
+        s.employersLoaded = true;
       })
       .addCase(refreshCalendar.fulfilled, (s, a) => {
         s.calendar = a.payload;

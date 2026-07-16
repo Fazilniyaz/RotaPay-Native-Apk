@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store';
 import { loadSettings } from '../../store/slices/settingsSlice';
 import { loadStoredAuth } from '../../store/slices/authSlice';
-import { loadAllData } from '../../store/slices/dataSlice';
+import { loadAllData, refreshEmployers } from '../../store/slices/dataSlice';
 import { useNotificationsSync } from '../../hooks/useNotificationsSync';
 import { OnboardingGate } from '../../components/onboarding/OnboardingGate';
 import { ProductTour } from '../../components/onboarding/ProductTour';
@@ -39,6 +39,10 @@ export default function AppLayout() {
     useEffect(() => {
         if (isAuthenticated) {
             dispatch(loadSettings());
+            // Employers first, on their own: the onboarding gate only needs these,
+            // so this lets it decide right away rather than sitting behind the
+            // full preload below (which waits on every module).
+            dispatch(refreshEmployers());
             // Preload every module's data once so tab switches are instant
             // (screens read from the shared cache instead of re-fetching).
             dispatch(loadAllData());

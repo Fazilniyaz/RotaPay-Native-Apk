@@ -33,7 +33,7 @@ const AUTO_ADDED_NOTE = 'Automatically added employee';
 
 export function OnboardingGate() {
     const dispatch = useDispatch<AppDispatch>();
-    const loaded = useSelector((s: RootState) => s.data.loaded);
+    const employersLoaded = useSelector((s: RootState) => s.data.employersLoaded);
     const employers = useSelector((s: RootState) => s.data.employers);
     const user = useSelector((s: RootState) => s.auth.user);
 
@@ -42,8 +42,8 @@ export function OnboardingGate() {
     const [autoAdding, setAutoAdding] = useState(false);
     const busy = saving || autoAdding;
 
-    // Wait for the first cache load; then gate only when there are no employees.
-    const visible = loaded && employers.length === 0;
+    // Wait only for employers to arrive; then gate when there are none.
+    const visible = employersLoaded && employers.length === 0;
 
     const submit = async () => {
         if (!form.employerName.trim() || !form.store.trim()) {

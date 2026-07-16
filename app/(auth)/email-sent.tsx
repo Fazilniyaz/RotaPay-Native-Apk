@@ -42,14 +42,19 @@ export default function EmailSentScreen() {
             <Text style={styles.body}>
                 We've sent a verification link to{' '}
                 <Text style={{ fontFamily: FONTS.bold, color: COLORS.onSurface }}>{email}</Text>.
-                {' '}Click the link to activate your account.
+                {' '}Please open it and verify your account, then come back here and sign in.
             </Text>
 
             <Button
-                title="Back to Sign In"
+                title="Go to Sign In"
                 onPress={() => router.replace('/(auth)/login')}
-                style={{ width: '100%', marginBottom: 16 }}
+                style={{ width: '100%', marginBottom: 10 }}
             />
+
+            <TouchableOpacity onPress={() => router.back()} activeOpacity={0.7} style={styles.backBtn}>
+                <Ionicons name="chevron-back" size={14} color={COLORS.onSurfaceVar} />
+                <Text style={styles.backText}>Go back</Text>
+            </TouchableOpacity>
 
             <Text style={styles.didntGet}>Didn't receive the email?</Text>
             <TouchableOpacity onPress={handleResend} disabled={resending} style={{ marginTop: 6 }}>
@@ -79,6 +84,8 @@ const styles = StyleSheet.create({
     iconCircle: { width: 96, height: 96, borderRadius: 48, alignItems: 'center', justifyContent: 'center', marginBottom: 24, ...SHADOW.button },
     title:      { fontSize: 24, fontFamily: FONTS.bold, color: COLORS.onSurface, marginBottom: 12, textAlign: 'center' },
     body:       { fontSize: 14, fontFamily: FONTS.regular, color: COLORS.onSurfaceVar, textAlign: 'center', lineHeight: 22, marginBottom: 28 },
+    backBtn:    { flexDirection: 'row', alignItems: 'center', gap: 2, paddingVertical: 6, marginBottom: 6 },
+    backText:   { fontSize: 13, fontFamily: FONTS.medium, color: COLORS.onSurfaceVar },
     didntGet:   { fontSize: 13, fontFamily: FONTS.regular, color: COLORS.outline, marginTop: 8 },
     resendBtn:  { fontSize: 13, fontFamily: FONTS.bold, color: COLORS.primary, letterSpacing: 0.5 },
     hintBox:    { flexDirection: 'row', alignItems: 'flex-start', gap: 8, marginTop: 24, padding: 14, backgroundColor: COLORS.primary + '10', borderRadius: RADIUS.md, borderWidth: 1, borderColor: COLORS.primary + '30' },
