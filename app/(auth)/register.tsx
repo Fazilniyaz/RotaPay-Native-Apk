@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
     View, Text, StyleSheet, ScrollView, TouchableOpacity,
-    KeyboardAvoidingView, Platform,
+    KeyboardAvoidingView, Platform, Keyboard,
 } from 'react-native';
 import { notify } from '../../lib/toast';
 import { useRouter } from 'expo-router';
@@ -53,6 +53,8 @@ export default function RegisterScreen() {
     const strength = getStrength(password);
 
     const handleRegister = async () => {
+        // Settle the view tree before any navigation happens below.
+        Keyboard.dismiss();
         setNameErr(''); setEmailErr(''); setPwErr(''); setConfirmErr('');
         let ok = true;
 
@@ -75,8 +77,12 @@ export default function RegisterScreen() {
         }
     };
 
+    // No KeyboardAvoidingView behavior on Android: 'height' resizes and re-renders
+    // children, and navigating away mid-adjustment makes Fabric re-parent a child that
+    // still has a parent -> hard crash. Android handles the keyboard natively
+    // (adjustResize), so the behavior isn't needed there.
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{ flex: 1 }}>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
             {/* removeClippedSubviews={false}: with the Fabric renderer, clipping re-parents
                 children as this screen unmounts on navigate, which crashes the app
                 ("child already has a parent" in ReactClippingViewManager). */}

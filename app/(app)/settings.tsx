@@ -89,20 +89,24 @@ export default function SettingsScreen() {
     const dirty = settingsChanged || photoChanged;
 
     const pickPhoto = async () => {
-        const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        if (!perm.granted) return notify('Permission needed', 'Allow photo access to change your picture.');
-        const res = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ['images'],
-            allowsEditing: true,
-            aspect: [1, 1],
-            quality: 0.6,
-            base64: true,
-        });
-        if (res.canceled || !res.assets?.[0]?.base64) return;
-        const asset = res.assets[0];
-        const mime = asset.mimeType ?? 'image/jpeg';
-        setPendingPhoto(`data:${mime};base64,${asset.base64}`);
-        setRemoveFlag(false);
+        try {
+            const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
+            if (!perm.granted) return notify('Permission needed', 'Allow photo access to change your picture.');
+            const res = await ImagePicker.launchImageLibraryAsync({
+                mediaTypes: ['images'],
+                allowsEditing: true,
+                aspect: [1, 1],
+                quality: 0.6,
+                base64: true,
+            });
+            if (res.canceled || !res.assets?.[0]?.base64) return;
+            const asset = res.assets[0];
+            const mime = asset.mimeType ?? 'image/jpeg';
+            setPendingPhoto(`data:${mime};base64,${asset.base64}`);
+            setRemoveFlag(false);
+        } catch {
+            notify('Error', 'Could not open the photo library. Please try again.');
+        }
     };
 
     const save = async () => {
