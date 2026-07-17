@@ -10,7 +10,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store';
 import { registerThunk } from '../../store/slices/authSlice';
-import { useGoogleAuth } from '../../hooks/useGoogleAuth';
+import { GoogleAuthRunner } from '../../components/auth/GoogleAuthRunner';
 import { COLORS, FONTS, RADIUS, SHADOW } from '../../constants/theme';
 import InputField from '../../components/ui/InputField';
 import Button from '../../components/ui/Button';
@@ -38,7 +38,10 @@ export default function RegisterScreen() {
     const router = useRouter();
     const dispatch = useDispatch<AppDispatch>();
     const { isLoading } = useSelector((s: RootState) => s.auth);
-    const google = useGoogleAuth({ onSuccess: () => router.replace('/(app)/dashboard') });
+    // Google auth machinery is mounted ONLY while a sign-in attempt is running
+    // (see GoogleAuthRunner) — keeping it out of this screen's mount/unmount
+    // path, where its async re-render crashed Fabric on navigate.
+    const [googleBusy, setGoogleBusy] = useState(false);
 
     const [name, setName]                 = useState('');
     const [email, setEmail]               = useState('');
@@ -71,7 +74,11 @@ export default function RegisterScreen() {
 
         const result = await dispatch(registerThunk({ email: email.trim(), password, displayName: name.trim() }));
         if (registerThunk.fulfilled.match(result)) {
-            router.replace({ pathname: '/(auth)/email-sent', params: { email: email.trim() } });
+            // Navigate on a later frame: the fulfilled action flips isLoading and
+            // re-renders this screen (button spinner -> text); unmounting in the
+            // same frame as that re-render trips a Fabric "child already has a
+            // parent" crash. The delay lets the re-render commit first.
+            setTimeout(() => router.replace({ pathname: '/(auth)/email-sent', params: { email: email.trim() } }), 100);
         } else {
             notify('Registration Failed', (result.payload as string) ?? 'Registration failed');
         }
@@ -161,10 +168,16 @@ export default function RegisterScreen() {
                         <View style={styles.dividerLine} />
                     </View>
 
-                    <TouchableOpacity style={[styles.googleBtn, google.loading && { opacity: 0.6 }]} activeOpacity={0.8} onPress={google.signIn} disabled={google.loading}>
+                    <TouchableOpacity style={[styles.googleBtn, googleBusy && { opacity: 0.6 }]} activeOpacity={0.8} onPress={() => setGoogleBusy(true)} disabled={googleBusy}>
                         <Text style={{ fontSize: 20 }}>G</Text>
-                        <Text style={styles.googleText}>{google.loading ? 'Signing in…' : 'Continue with Google'}</Text>
+                        <Text style={styles.googleText}>{googleBusy ? 'Signing in…' : 'Continue with Google'}</Text>
                     </TouchableOpacity>
+                    {googleBusy && (
+                        <GoogleAuthRunner
+                            onSuccess={() => router.replace('/(app)/dashboard')}
+                            onSettled={() => setGoogleBusy(false)}
+                        />
+                    )}
 
                     <View style={styles.footerRow}>
                         <Text style={styles.footerText}>Already have an account? </Text>
