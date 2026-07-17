@@ -1,8 +1,8 @@
 import { Stack } from 'expo-router';
 
-// No `animation` override here: a fade transition keeps the outgoing and incoming
-// screens mounted at once, which trips a Fabric view re-parenting crash
-// ("addViewAt: ... child already has a parent") on register -> email-sent.
+// animation: 'none' — the Fabric view-recycling crash ("addViewAt: ... child
+// already has a parent", react-native-screens #3249) fires during the fragment
+// transition between screens. Skipping the transition removes the trigger.
 export default function AuthLayout() {
-    return <Stack screenOptions={{ headerShown: false }} />;
+    return <Stack screenOptions={{ headerShown: false, animation: 'none' }} />;
 }

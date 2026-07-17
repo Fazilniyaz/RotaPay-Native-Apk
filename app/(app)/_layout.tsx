@@ -53,11 +53,11 @@ export default function AppLayout() {
 
     return (
         <>
-            {/* No `animation` override: a fade transition keeps the outgoing and
-                incoming screens mounted at once, which trips a Fabric view
-                re-parenting crash ("addViewAt: ... child already has a parent")
-                on login -> dashboard. */}
-            <Stack screenOptions={{ headerShown: false }} />
+            {/* animation: 'none' — the Fabric view-recycling crash ("addViewAt: ...
+                child already has a parent", react-native-screens #3249) fires during
+                the fragment transition between screens. Skipping the transition
+                removes the trigger. */}
+            <Stack screenOptions={{ headerShown: false, animation: 'none' }} />
             {/* Restricts the app on a rooted/jailbroken device (point 3). */}
             <DeviceIntegrityGate />
             {/* Blocks the app until the first (default) employee is created. */}
